@@ -12,18 +12,22 @@ body{
     display: flex;
 
 }
-
-.memory-game{
-    width: 60vw;
-    display: flex;
+section{
+     display: flex;
+     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
     margin: auto;
-    
+    text-wrap: wrap;
     
 }
 
-h1 {
+.memory-game{
+    width: 60vw;
+}
+
+.memory-game h1 {
     transform: rotateY(180deg);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     width: 15vw;

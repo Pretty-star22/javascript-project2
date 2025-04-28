@@ -1,9 +1,14 @@
 let cards = document.querySelectorAll(".memory-card");
+let count = document.getElementById("count")
+let status = document.getElementById("status")
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard;
 let secondCard;
+let num = 0;
+
 
 function flipCard(){
     if(lockBoard) return;
@@ -17,6 +22,7 @@ function flipCard(){
         hasFlippedCard= false;
         secondCard =this;
         checkForMatch(); 
+        getCount();
       }
       
       
@@ -54,3 +60,23 @@ function resetBoard(){
 })();
 
 cards.forEach(card => card.addEventListener("click", flipCard));
+
+
+
+function getCount() {
+    let isMatch = firstCard.dataset.name == secondCard.dataset.name;
+  if (isMatch) {
+       num = num+1; 
+       count.innerText= num;   
+    } 
+     chechStatus();
+  }
+
+ function chechStatus(){
+    if(num === 8 ){
+       status.innerText="Congradulations, you won!!🎈🎉🎊";
+    }else{
+        return;
+    }
+ };
+ 
